@@ -90,8 +90,10 @@ GET /api/loans/active
 ```
 ### Admin Email and Password
 
+```
 admin@gmail.com
 Admin123
+```
 
 ## Business Rules
 
