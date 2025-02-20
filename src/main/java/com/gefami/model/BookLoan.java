@@ -34,12 +34,13 @@ public class BookLoan {
     @JoinColumn(name = "book_id")
     private Book book;
     
-    @Column(nullable = false)
-    private LocalDateTime borrowDate;
+    @Column(name = "loan_date")
+    private LocalDateTime loanDate;
     
-    @Column(nullable = false)
+    @Column(name = "due_date")
     private LocalDateTime dueDate;
     
+    @Column(name = "return_date")
     private LocalDateTime returnDate;
     
     public boolean isOverdue() {

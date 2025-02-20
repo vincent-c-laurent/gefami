@@ -40,8 +40,8 @@ public class BookLoanService {
         BookLoan loan = BookLoan.builder()
                 .user(user)
                 .book(book)
-                .borrowDate(LocalDateTime.now())
-                .dueDate(LocalDateTime.now().plusDays(14)) // 2 weeks loan period
+                .loanDate(LocalDateTime.now())
+                .dueDate(LocalDateTime.now().plusDays(14))
                 .build();
                 
         return bookLoanRepository.save(loan);

@@ -1,10 +1,9 @@
-CREATE TABLE book_loans (
+CREATE TABLE IF NOT EXISTS book_loans (
     id BIGSERIAL PRIMARY KEY,
-    user_id BIGINT NOT NULL,
-    book_id BIGINT NOT NULL,
-    borrow_date TIMESTAMP NOT NULL,
+    user_id BIGINT REFERENCES users(id),
+    book_id BIGINT REFERENCES books(id),
+    loan_date TIMESTAMP NOT NULL,
     due_date TIMESTAMP NOT NULL,
     return_date TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (book_id) REFERENCES books(id)
+    UNIQUE(book_id, return_date)
 ); 
